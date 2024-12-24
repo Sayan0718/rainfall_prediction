@@ -10,16 +10,16 @@
     <div class="container">
         <h1>Weather Prediction</h1>
         <form action="/predict" method="POST">
-            <label for="precipitation">Precipitation:</label>
+            <label for="precipitation">Precipitation (mm):</label>
             <input type="number" step="0.1" name="precipitation" required>
 
-            <label for="temp_max">Max Temperature:</label>
+            <label for="temp_max">Max Temperature (°C):</label>
             <input type="number" step="0.1" name="temp_max" required>
 
-            <label for="temp_min">Min Temperature:</label>
+            <label for="temp_min">Min Temperature (°C):</label>
             <input type="number" step="0.1" name="temp_min" required>
 
-            <label for="wind">Wind Speed:</label>
+            <label for="wind">Wind Speed (m/s):</label>
             <input type="number" step="0.1" name="wind" required>
 
             <button type="submit">Predict Weather</button>
