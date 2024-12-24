@@ -24,13 +24,16 @@ def predict():
     # Prepare input data for prediction
     input_data = np.array([[precipitation, temp_max, temp_min, wind]])
     scaled_input = scaler.transform(input_data)  # Scaler expects only 4 features
+    print(f"Scaled Input: {scaled_input}")  # Debugging: Check scaled input
 
     # Predict weather
     prediction = knn_model.predict(scaled_input)
+    print(f"Raw Prediction: {prediction}")  # Debugging: Check model output
 
     # Map prediction result to weather category
     weather_map = {0: 'Drizzle', 1: 'Fog', 2: 'Rain', 3: 'Snow', 4: 'Sun'}
-    predicted_weather = weather_map[prediction[0]]
+    predicted_weather = weather_map.get(prediction[0], "Unknown")
+    print(f"Mapped Prediction: {predicted_weather}")  # Debugging: Check final result
 
     return render_template('index.html', prediction=predicted_weather)
 
